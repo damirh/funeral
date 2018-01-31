@@ -1,0 +1,7 @@
+<%= form_for @funeral do |f| %>
+	<p>Name:<br>
+	<%= f.text_field :name, placeholder: 'Name' %></p>
+	<p>Start time:<br>
+	<%= f.datetime_select :start_time, default: @start_time, minute_step: 15 %></p>
+	<%= f.submit %>
+<% end %>

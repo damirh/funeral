@@ -1,0 +1,8 @@
+<h3><%= @funeral.name %></h3>
+<h4><%= daytime @funeral.start_time %></h4>
+
+<% if @weather.present? %>
+	<img src="<%= weather_icon(@weather, Date.today) %>">
+	<br>
+	<%= @weather.first.temp %> &deg;C - <%= @weather.first.description %>
+<% end %>

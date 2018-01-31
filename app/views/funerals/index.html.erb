@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-quarter" style="padding-right:1em">
+		<h3>New funeral</h3>
+		<%= render 'form' %>
+
+		<% if flash[:error].present? %>
+			<p><span style="color:#c00"><%= flash[:error] %></span></p>
+		<% end %>
+		<br><br>
+	</div>
+	<div class="col">
+		<h3>Funerals</h3>
+
+		<%= month_calendar events: @funerals do |date, funerals| %>
+			<img src="<%= weather_icon(@weather, date) %>" style="float:right">
+			<%= date %>
+
+			<% funerals.each do |funeral| %>
+				<div>
+					<%= link_to nice(funeral), funeral %>
+				</div>
+			<% end %>
+
+			<% if date >= Date.today %>
+				<br>
+				<%= link_to '+', new_funeral_path(start_time: date) %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DemodayApp</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+		<% if user_signed_in? %>
+			<header>
+				<ul>
+					<li><%= link_to "Funerals", funerals_path %></li>
+					<li><%= link_to "New funeral", new_funeral_path %></li>
+					<li style='float:right'><%= link_to "Log out &raquo;".html_safe, destroy_user_session_path, :method => :delete %></li>
+				</ul>
+			</header>
+		<% end %>
+
+		<article>
+			<%= yield %>
+		</article>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require simple_calendar
+ *= require_self
+ */
+
+
+*, *:before, *:after { box-sizing: border-box; }
+
+/* awesome gridly: https://github.com/IonicaBizau/gridly */
+.row{display:flex}.col{flex:1}@media(max-width:48em){.row{flex-direction:column}.col{flex:0 0 auto}}
+@media(min-width:48em){.col-tenth{flex:0 0 10%}.col-fifth{flex:0 0 20%}.col-quarter{flex:0 0 25%}.col-third{flex:0 0 33.3333334%}.col-half{flex:0 0 50%}}
+
+body {
+	margin: 0;
+	color: #333;
+	font-size: 1em;
+	font-family: helvetica, arial, verdana, sans-serif;
+}
+
+h3 { margin-top: 0 }
+
+header {
+	height: 40px;
+	line-height: 40px;
+	background-color: #4096EE;
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
+header ul { margin: 0; padding: 0; }
+header ul li {
+	list-style: none;
+	display: inline-block;
+}
+header ul li a {
+	display: block;
+	padding: 0 1em;
+	color: #fff;
+	text-decoration: none;
+}
+header ul li a:hover {
+	color: #4096EE;
+	background-color: #fff;
+}
+
+article { padding: 1em; }
+
+input {
+	margin: .5em 0;
+	padding: .5em;
+}
+
+input[type='email'],
+input[type='text'],
+input[type='password'] {
+	display: inline-block;
+	border: 1px solid #aaa;
+	width: 100%;
+	max-width: 300px;
+}
+input[type='submit'] {
+	display: block;
+	max-width: 300px;
+	width: 100%;
+}
+
+.box {
+	display: block;
+	margin: 0 auto;
+	max-width: 350px;
+	padding: 1em;
+
+}
