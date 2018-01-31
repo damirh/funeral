@@ -23,7 +23,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: funerals_production
+  database: funeral_production
   pool: 5
   username: funeral
   password: funeral
