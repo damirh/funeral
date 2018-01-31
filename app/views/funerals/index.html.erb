@@ -13,7 +13,7 @@
 
 		<%= month_calendar events: @funerals do |date, funerals| %>
 			<img src="<%= weather_icon(@weather, date) %>" style="float:right">
-			<%= date %>
+			<%= date.day %>
 
 			<% funerals.each do |funeral| %>
 				<div>
